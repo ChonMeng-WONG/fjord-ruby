@@ -19,4 +19,4 @@ sugg_number = fav_number.to_i + 1
 #入力された数を表示(文字列として表示)
 puts 'Your favourite number is ' + fav_number.to_s + '.'
 #1を足された数字列を表示(文字列として表示)
-puts 'But i suggest you to choice ' + sugg_number.to_s + ' because '+ sugg_number.to_s + ' is more bigger than ' + fav_number.to_s + '. :-)'
+puts 'But i suggest you to choice ' + sugg_number.to_s + ' because '+ sugg_number.to_s + ' is bigger than ' + fav_number.to_s + '. :-)'
