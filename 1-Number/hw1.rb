@@ -49,7 +49,7 @@ step2 = 60 * 12 * 5
 #81-100歳: 毎月10個
 step3 = 20 * 12 * 1
 total = step1 + step2 + step3
-print "一生のうち" , total, "個のチョコレートを食べたい。\n"
+print "一生のうち" , total , "個のチョコレートを食べたい。\n"
 
 
 
