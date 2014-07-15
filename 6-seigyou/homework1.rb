@@ -4,7 +4,7 @@
 number = 99
 
 while number != 0
-	puts number.to_s + " Bottles of beer on the wall"
+    puts number.to_s + " Bottles of beer on the wall"
     puts number.to_s + " Bottles of beer"
     puts "Take one down and pass it around"
     number = number - 1
