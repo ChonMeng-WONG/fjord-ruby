@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 puts 'マレフィセント：「可愛い坊やですね。こんにちは」'
-
 times = 0
-
 while times != 3 #3回連続BYEを入力するまでに続く
 	msg = gets.chomp #入力する
-
 	if msg == 'BYE'
 	puts 'マレフィセント：「なんだと！？？？」'
 	times = times + 1 #'BYE'入力したら1回カウントする
