@@ -4,12 +4,12 @@
 number = 99
 
 while number != 0
-    puts number.to_s + " Bottles of beer on the wall"
-    puts number.to_s + " Bottles of beer"
-    puts "Take one down and pass it around"
-    number = number - 1
-    puts number.to_s + " Bottles of beer on the wall"
-    puts " "
+	puts number.to_s + " Bottles of beer on the wall"
+	puts number.to_s + " Bottles of beer"
+	puts "Take one down and pass it around"
+	number = number - 1
+	puts number.to_s + " Bottles of beer on the wall"
+	puts " "
 end
 
 puts '歌い切ったね！すばらしい〜'
