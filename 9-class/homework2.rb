@@ -67,29 +67,28 @@ class OrangeTree
     end
   end
 
-  def pickOrange
-    if @orangeCount > 0
-      @orangeCount -= 1
+  def pickOrange # 実を摘むかどうか
+    if @orangeCount > 0 # 実ったオレンジあるかどうか？
+      @orangeCount -= 1 # あったら1個摘む
       puts "おいしいオレンジを一個いただきました〜"
     else
       puts "あの、オレンジがないんだけど"
     end
   end
 
-  def die
+  def die # オレンジの木の死んだら、高さと実の数を零に
     @treeheight = 0
     @orangeCount = 0
   end
 
-  def isEndYear
+  def isEndYear # 樹齢と設定した志望年齢の比較
     @treeages >= @years
   end
 
 end
 
 hey = OrangeTree.new
-print hey.height
-puts
+puts hey.height
 while !hey.isEndYear
   hey.one_year_passes
   hey.height
