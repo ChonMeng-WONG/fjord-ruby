@@ -16,7 +16,7 @@ class Dragon
         fly
       elsif command == 5
         jiggle
-      elsif command != 1 && command != 2 && command != 3 && command != 4 && command != 5 
+      elsif command != 1...5
         puts "指令が無効です。"
       end
     end
