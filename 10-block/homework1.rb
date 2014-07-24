@@ -5,11 +5,8 @@
 def gfClock &block
   cnt = 0 
   now = Time.now.hour # 現時刻を取得
-  if now <= 12 # Time.now.hour は 0-23 になる、それを1-24に
-    now += 1 # さらに、1-24を、1-12,1-12にする
-  end
-  if now >= 13
-    now -= 12
+  if now > 12 
+     now = now - 12
   end
   while cnt != now # now回処理を繰り返す
     block.call
@@ -18,7 +15,7 @@ def gfClock &block
 end
  
 gfClock do
-    puts 'DONG!'
+    puts "ブロックによる時間報告ですよ〜"
   end
 
 puts "以上はブロック"
@@ -29,14 +26,11 @@ puts "以上はブロック"
 # ---見た目はそんなにかわらない？
 
 class Song
-def gfClock
+def gfClock2
   cnt = 0 
   now = Time.now.hour # 現時刻を取得
-  if now <= 12 # Time.now.hour は 0-23 になる、それを1-24に
-    now += 1 # さらに、1-24を、1-12,1-12にする
-  end
-  if now >= 13
-    now -= 12
+  if now > 12 
+     now = now - 12
   end
   while cnt != now # now回処理を繰り返す
     sing
@@ -45,12 +39,39 @@ def gfClock
 end
  
 def sing
-  puts 'DONG!'
+  puts "クラス・メソッドによる時間報告ですよ〜"
 end
 end
 
 sang = Song.new
-sang.gfClock
+sang.gfClock2
 
 puts "以上はクラスとメソッドのみ"
 # ----------------------------------------------------------
+# ブロックではなく、手続きオプジェクとで書いてみた。
+
+# #鐘をならすブロック
+sang2 = Proc.new do
+  puts "手続きオブジェクトによる時間報告ですよ"
+end
+
+#今回メインとなるメソッド
+#現在の時刻を計算する
+def oldClock someProc
+  #現在時刻を獲得
+  time = Time.now.hour
+
+  #時刻を12時間系に変換
+  if time > 12
+    time -= 12
+  end
+
+  #現在の時刻分dongブロックをコールする
+  time.times do
+    someProc.call 
+  end 
+end
+
+oldClock sang2
+
+puts "以上は手続きオブジェクトでした"
