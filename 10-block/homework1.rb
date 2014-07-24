@@ -12,11 +12,11 @@ def gfClock &block
     now -= 12
   end
   while cnt != now # now回処理を繰り返す
-    sing
+    block.call
     cnt += 1
   end
 end
  
-def sing
-  puts 'DONG!'
-end
+gfClock do
+    puts 'DONG!'
+  end
