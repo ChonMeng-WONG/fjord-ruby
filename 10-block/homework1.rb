@@ -58,7 +58,7 @@ end
 
 #今回メインとなるメソッド
 #現在の時刻を計算する
-def oldClock someProc
+def gfClock3 someProc
   #現在時刻を獲得
   time = Time.now.hour
 
@@ -73,6 +73,6 @@ def oldClock someProc
   end 
 end
 
-oldClock sang2
+gfClock3 sang2
 
 puts "以上は手続きオブジェクトでした"
