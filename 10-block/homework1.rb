@@ -6,8 +6,12 @@
 def gfClock &block
   cnt = 0 
   now = Time.now.hour # 現時刻を取得
-  if now > 12 
-     now = now - 12
+  if now == 0 # 零時でも12回なる
+     now = 12
+   elsif now >= 13 # 13-23 の間は、1-12にする
+     now = now / 2
+   else
+     now = now # 1-12 の間はそのまま
   end
   while cnt != now # now回処理を繰り返す
     block.call
