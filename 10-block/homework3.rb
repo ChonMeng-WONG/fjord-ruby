@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-=begin#---------------ブロック作成要点-----------------------
+=begin
+#---------------ブロック作成要点-----------------------
 
   最初から
 
@@ -56,17 +57,17 @@ def log description, &block
 end
  
 log '外' do # インデントなし
-  $layer = 1　
-  log 'ある小さな' do　# 一層目はインデント一回
-    $layer = 2　
-    log 'ちっちゃな' do　# 二層目はインデント二回
+  $layer = 1
+  log 'ある小さな' do# 一層目はインデント一回
+    $layer = 2
+    log 'ちっちゃな' do# 二層目はインデント二回
       'lots of love'
     end
-    42　# 返り値
+    42# 返り値
   end
-  $layer = 1　# 一層目はインデント一回
+  $layer = 1# 一層目はインデント一回
   log 'もうひとつの' do
     'I love Indian food!'
   end
-  true　# 返り値
+  true# 返り値
 end
