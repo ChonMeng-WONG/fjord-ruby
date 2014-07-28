@@ -32,7 +32,7 @@ def englishNumber number
   for counter in 0..length # counterを0から桁数lengthまで繰り返す
     write = left / numPlace[counter] # 一個下までの桁を割っていく
     left = left - write * numPlace[counter] # left割ったらその分だけ減って、次のステップまで待つ。
-    if write > 0　# 割ってみて、0より大きければ、計上する（それに相応しい英語）
+    if write > 0 # 割ってみて、0より大きければ、計上する（それに相応しい英語）
       containner = englishNumber write
       numString = numString + containner + numPlaceWords[counter]
       if left > 0 # 割ってみて、0 より小さいと、計上しない(相応しい英語がない、次のステップ)
@@ -49,7 +49,7 @@ def englishNumber number
   left  = left - write*10 # 
   if write > 0
     if ((write == 1) and (left > 0)) # 11-19であれば
-      numString = numString + teenagers[left-1]　# teenagers (特別の書き方で出力)
+      numString = numString + teenagers[left-1] #teenagers (特別の書き方で出力)
       left = 0 # left なし
     else
       numString = numString + tensPlace[write-1] #そうでなければ、普通な書き方にする
@@ -71,11 +71,11 @@ def englishNumber number
  
   # end 1
  
-  numString　#　返り値
+  numString #　返り値
 end
  
 puts englishNumber(  0)
-puts englishNumber(  9)
+puts englishNumber(  -9)
 puts englishNumber( 10)
 puts englishNumber( 11)
 puts englishNumber( 17)
