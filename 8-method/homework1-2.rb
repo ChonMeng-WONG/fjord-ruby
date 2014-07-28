@@ -24,18 +24,18 @@ def englishNumber number
   numPlace = [1_000_000_000_000, 1_000_000_000, 1_000_000, 1_000, 100]
   numPlaceWords = [' trillion', ' billion', ' million', ' thousand', ' hundred']
  
-  # start over 100
+  # start over 100(100以上の英語単位は、全て1000倍になっている。)
  
-  left  = number
-  counter = 0
-  length = numPlace.length - 1
-  for counter in 0..length
-    write = left / numPlace[counter]
-    left = left - write * numPlace[counter]
-    if write > 0
+  left  = number # 引数のnumberを設定
+  counter = 0 # 初期値0
+  length = numPlace.length - 1 
+  for counter in 0..length # counterを0から桁数lengthまで繰り返す
+    write = left / numPlace[counter] # 一個下までの桁を割っていく
+    left = left - write * numPlace[counter] # left割ったらその分だけ減って、次のステップまで待つ。
+    if write > 0　# 割ってみて、0より大きければ、計上する（それに相応しい英語）
       containner = englishNumber write
       numString = numString + containner + numPlaceWords[counter]
-      if left > 0
+      if left > 0 # 割ってみて、0 より小さいと、計上しない(相応しい英語がない、次のステップ)
         numString = numString + ' '
       end
     end
@@ -43,16 +43,16 @@ def englishNumber number
  
   # end over 100
  
-  # start 10
+  # start 10(2桁、11-19の特別の書き方)
  
-  write = left/10
-  left  = left - write*10
+  write = left/10 # number を 10 で割る
+  left  = left - write*10 # 
   if write > 0
-    if ((write == 1) and (left > 0))
-      numString = numString + teenagers[left-1]
-      left = 0
+    if ((write == 1) and (left > 0)) # 11-19であれば
+      numString = numString + teenagers[left-1]　# teenagers (特別の書き方で出力)
+      left = 0 # left なし
     else
-      numString = numString + tensPlace[write-1]
+      numString = numString + tensPlace[write-1] #そうでなければ、普通な書き方にする
     end
     if left > 0
       numString = numString + '-'
@@ -61,17 +61,17 @@ def englishNumber number
  
   # end 10
  
-  # start 1
+  # start 1(上記の全ての仕分けを経歴してから、最後の1桁だけ判断)
  
-  write = left
+  write = left  #　最後の段階、white 残り　1桁、leftと同じ
   left  = 0
-  if write > 0
+  if write > 0 # write は 0でない場合、英語に変換する
     numString = numString + onesPlace[write-1]
   end
  
   # end 1
  
-  numString
+  numString　#　返り値
 end
  
 puts englishNumber(  0)
