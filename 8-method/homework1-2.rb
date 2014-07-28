@@ -10,9 +10,9 @@ def englishNumber number
  
   numString = ''
  
-  onesPlace = ['one',     'two',       'three',    'four',     'five',               'six',     'seven',     'eight',    'nine']
-  tensPlace = ['ten',     'twenty',    'thirty',   'forty',    'fifty',               'sixty',   'seventy',   'eighty',   'ninety']
-  teenagers = ['eleven',  'twelve',    'thirteen', 'fourteen', 'fifteen',               'sixteen', 'seventeen', 'eighteen', 'nineteen']
+  onesPlace = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+  tensPlace = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+  teenagers = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
  
   #  上のほうの桁から表示させていって、"left" には
   #  まだ残っている数を入れます。
